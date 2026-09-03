@@ -2,18 +2,250 @@
 <html lang="zh-Hant">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>DailyHeart｜療癒卡</title>
 
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
+
 
 <body>
 
-    <h1>DailyHeart</h1>
+<main class="card-game">
 
-    <p>療癒卡互動測試中 🌿</p>
+    <section class="game-frame">
+
+
+        <!-- Logo -->
+
+        <header class="frame-header">
+
+            <img
+                src="images/logo.png"
+                alt="組織 Logo"
+                class="logo"
+            >
+
+        </header>
+
+
+        <!-- 上方固定文字 -->
+
+        <div class="intro-text">
+
+            <h1>
+                抽一張專屬你的療癒卡，<br>
+                跟自己的情緒打聲招呼吧。
+            </h1>
+
+        </div>
+
+
+        <!-- ====================
+             心情選擇
+        ===================== -->
+
+        <section
+            id="mood-screen"
+            class="screen active"
+        >
+
+            <h2>
+                現在的你，最接近哪一種心情？
+            </h2>
+
+
+            <div class="mood-buttons">
+
+
+                <button
+                    class="mood-button"
+                    data-mood="mood01"
+                >
+
+                    <img
+                        src="images/mood-01.png"
+                        alt="心情選項一"
+                    >
+
+                </button>
+
+
+                <button
+                    class="mood-button"
+                    data-mood="mood02"
+                >
+
+                    <img
+                        src="images/mood-02.png"
+                        alt="心情選項二"
+                    >
+
+                </button>
+
+
+                <button
+                    class="mood-button"
+                    data-mood="mood03"
+                >
+
+                    <img
+                        src="images/mood-03.png"
+                        alt="心情選項三"
+                    >
+
+                </button>
+
+
+                <button
+                    class="mood-button"
+                    data-mood="mood04"
+                >
+
+                    <img
+                        src="images/mood-04.png"
+                        alt="心情選項四"
+                    >
+
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================
+             抽卡畫面
+        ===================== -->
+
+        <section
+            id="card-screen"
+            class="screen"
+        >
+
+            <div class="card-area">
+
+
+                <!-- 卡牌 -->
+
+                <div
+                    id="card"
+                    class="card"
+                >
+
+                    <div class="card-inner">
+
+
+                        <!-- 正面 -->
+
+                        <div class="card-front">
+
+                            <img
+                                id="card-image"
+                                src=""
+                                alt="療癒卡"
+                            >
+
+                        </div>
+
+
+                        <!-- 背面 -->
+
+                        <div class="card-back">
+
+                            <p>
+                                今天也辛苦了 🌿
+                            </p>
+
+                            <p>
+                                想看看這組還有哪些卡牌嗎？
+                            </p>
+
+
+                            <a
+                                id="pdf-link"
+                                class="pdf-button"
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                📖 看看這組完整卡牌
+                            </a>
+
+
+                            <button
+                                id="draw-again"
+                                class="action-button"
+                            >
+                                ↻ 再抽一張
+                            </button>
+
+
+                            <button
+                                id="change-mood"
+                                class="action-button secondary"
+                            >
+                                ← 換個心情
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 翻牌提示 -->
+
+                <p
+                    id="flip-hint"
+                    class="flip-hint"
+                >
+                    做完了嗎？<br>
+
+                    <strong>
+                        再點一下卡牌，看看後面藏了什麼！
+                    </strong>
+
+                </p>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- 下方固定文字 -->
+
+        <footer class="frame-footer">
+
+            <p>
+                今天就是那一天，無時無刻都可以正念練習！
+            </p>
+
+        </footer>
+
+
+    </section>
+
+</main>
+
+
+<script
+    src="script.js"
+></script>
 
 </body>
 
