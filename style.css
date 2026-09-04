@@ -83,12 +83,10 @@ body {
 .frame-header {
     width: 100%;
 
-    height: 170px;
-
-    ove.frame-header {
-    width: 100%;
-
-    height: 120px;
+    /*
+        讓上方主視覺有足夠存在感
+    */
+    height: 135px;
 
     overflow: hidden;
 
@@ -145,9 +143,9 @@ body {
 
 
 #mood-screen h2 {
-    margin: 0 0 24px;
+    margin: 0 0 28px;
 
-    font-size: 22px;
+    font-size: 21px;
 
     line-height: 1.5;
 
@@ -163,13 +161,13 @@ body {
 
 .mood-buttons {
     width: 100%;
-    max-width: 700px;
+    max-width: 650px;
 
     display: grid;
 
     grid-template-columns: 1fr 1fr;
 
-    gap: 22px;
+    gap: 20px;
 }
 
 
@@ -350,6 +348,28 @@ body {
     font-size: 18px;
 
     line-height: 1.5;
+}
+
+
+/* =========================
+   翻牌提示
+========================= */
+
+.flip-hint {
+    margin: 12px 0 0;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    color: #666;
+
+    text-align: center;
+}
+
+
+.flip-hint strong {
+    color: #58766C;
 }
 
 
