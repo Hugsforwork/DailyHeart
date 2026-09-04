@@ -83,10 +83,7 @@ body {
 .frame-header {
     width: 100%;
 
-    /*
-        讓上方主視覺有足夠存在感
-    */
-    height: 135px;
+    height: 170px;
 
     overflow: hidden;
 
@@ -96,7 +93,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 
 .top-banner {
     width: 100%;
