@@ -11,6 +11,7 @@ html,
 body {
     margin: 0;
     padding: 0;
+
     width: 100%;
     min-height: 100%;
 }
@@ -23,7 +24,7 @@ body {
 
     color: #333;
 
-    background-color: #F7F5F0;
+    background: #F7F5F0;
 }
 
 
@@ -43,7 +44,9 @@ body {
 
     background-color: #F7F5F0;
 
-    /* 之後放設計師的背景圖 */
+    /*
+        之後放設計夥伴製作的底圖
+    */
     background-image: url("images/background.png");
     background-size: cover;
     background-position: center;
@@ -58,14 +61,10 @@ body {
     width: 100%;
     max-width: 760px;
 
-    min-height: 620px;
-
-    position: relative;
+    overflow: hidden;
 
     display: flex;
     flex-direction: column;
-
-    overflow: hidden;
 
     background: #F7F5F0;
 
@@ -78,62 +77,53 @@ body {
 
 
 /* =========================
-   Logo
+   上方主視覺區
 ========================= */
 
 .frame-header {
     width: 100%;
 
-    padding: 12px 20px;
+    /*
+        讓上方主視覺有足夠存在感
+    */
+    height: 135px;
+
+    overflow: hidden;
+
+    background: #8BA89D;
 
     display: flex;
     justify-content: center;
     align-items: center;
-
-    background: #8BA89D;
 }
 
-.logo {
-    width: 90px;
-    height: auto;
+
+.top-banner {
+    width: 100%;
+    height: 100%;
 
     display: block;
+
+    object-fit: cover;
 }
 
 
 /* =========================
-   上方文字
-========================= */
-
-.intro-text {
-    padding: 22px 20px 10px;
-
-    text-align: center;
-}
-
-.intro-text h1 {
-    margin: 0;
-
-    font-size: clamp(20px, 3vw, 28px);
-
-    line-height: 1.5;
-
-    font-weight: 700;
-
-    color: #333;
-}
-
-
-/* =========================
-   各個畫面
+   固定的互動內容區
 ========================= */
 
 .screen {
+    width: 100%;
+
+    /*
+        心情選擇與抽卡共用同一個高度
+    */
+    height: 500px;
+    min-height: 500px;
+
+    padding: 25px 35px;
+
     display: none;
-
-    flex: 1;
-
-    padding: 15px 30px 25px;
 }
 
 .screen.active {
@@ -151,10 +141,13 @@ body {
     align-items: center;
 }
 
-#mood-screen h2 {
-    margin: 5px 0 25px;
 
-    font-size: 20px;
+#mood-screen h2 {
+    margin: 0 0 28px;
+
+    font-size: 21px;
+
+    line-height: 1.5;
 
     font-weight: 600;
 
@@ -168,13 +161,13 @@ body {
 
 .mood-buttons {
     width: 100%;
-    max-width: 600px;
+    max-width: 650px;
 
     display: grid;
 
     grid-template-columns: 1fr 1fr;
 
-    gap: 16px;
+    gap: 20px;
 }
 
 
@@ -202,7 +195,7 @@ body {
 
     display: block;
 
-    border-radius: 16px;
+    border-radius: 18px;
 }
 
 
@@ -222,7 +215,7 @@ body {
 
 
 /* =========================
-   卡牌區
+   抽卡區
 ========================= */
 
 #card-screen {
@@ -233,10 +226,12 @@ body {
 
 .card-area {
     width: 100%;
+    height: 100%;
 
     display: flex;
     flex-direction: column;
 
+    justify-content: center;
     align-items: center;
 }
 
@@ -246,9 +241,15 @@ body {
 ========================= */
 
 .card {
-    width: min(400px, 80vw);
+    /*
+        最大化卡牌，
+        但不能超過內容區高度
+    */
 
-    aspect-ratio: 3 / 4;
+    height: 400px;
+    width: 300px;
+
+    max-width: 80%;
 
     perspective: 1200px;
 
@@ -273,6 +274,10 @@ body {
     transform: rotateY(180deg);
 }
 
+
+/* =========================
+   卡牌正面／背面
+========================= */
 
 .card-front,
 .card-back {
@@ -299,6 +304,14 @@ body {
 /* =========================
    卡牌正面
 ========================= */
+
+.card-front {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
 
 .card-front img {
     width: 100%;
@@ -329,12 +342,21 @@ body {
 }
 
 
+.card-back p {
+    margin: 0 0 12px;
+
+    font-size: 18px;
+
+    line-height: 1.5;
+}
+
+
 /* =========================
    翻牌提示
 ========================= */
 
 .flip-hint {
-    margin: 15px 0 0;
+    margin: 12px 0 0;
 
     font-size: 15px;
 
@@ -346,42 +368,62 @@ body {
 }
 
 
+.flip-hint strong {
+    color: #58766C;
+}
+
+
 /* =========================
-   背面按鈕
+   PDF 按鈕
 ========================= */
 
-.pdf-button,
-.action-button {
+.pdf-button {
     width: 100%;
     max-width: 280px;
 
     padding: 12px 16px;
 
+    margin-top: 8px;
+
     border-radius: 12px;
 
-    font-size: 16px;
-
-    cursor: pointer;
-}
-
-
-.pdf-button {
     background: #8BA89D;
 
     color: #fff;
 
     text-decoration: none;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    text-align: center;
 }
 
 
+/* =========================
+   操作按鈕
+========================= */
+
 .action-button {
+    width: 100%;
+    max-width: 280px;
+
+    padding: 11px 16px;
+
     margin-top: 10px;
+
+    border-radius: 12px;
 
     border: 1px solid #8BA89D;
 
     background: #E5EEE9;
 
     color: #48685E;
+
+    font-size: 16px;
+
+    cursor: pointer;
 }
 
 
@@ -395,11 +437,23 @@ body {
 
 
 /* =========================
-   底部文字
+   下方固定文字
 ========================= */
 
 .frame-footer {
-    padding: 14px 20px;
+    width: 100%;
+
+    /*
+        比上方主視覺矮，
+        但不會小到像一條細線
+    */
+    min-height: 85px;
+
+    padding: 18px 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     background: #8BA89D;
 
@@ -412,9 +466,11 @@ body {
 .frame-footer p {
     margin: 0;
 
-    font-size: 15px;
+    font-size: 18px;
 
     line-height: 1.5;
+
+    font-weight: 600;
 }
 
 
@@ -428,29 +484,65 @@ body {
         padding: 10px;
     }
 
-    .game-frame {
-        min-height: 600px;
 
+    .game-frame {
         border-radius: 18px;
     }
 
-    .intro-text {
-        padding: 16px 15px 8px;
+
+    /* 上方主視覺 */
+
+    .frame-header {
+        height: 110px;
     }
 
-    .intro-text h1 {
-        font-size: 20px;
-    }
+
+    /* 中間互動區仍維持固定高度 */
 
     .screen {
-        padding: 10px 15px 15px;
+        height: 460px;
+        min-height: 460px;
+
+        padding: 20px 15px;
     }
+
+
+    #mood-screen h2 {
+        margin-bottom: 22px;
+
+        font-size: 18px;
+    }
+
 
     .mood-buttons {
-        gap: 10px;
+        gap: 12px;
     }
 
+
+    /* 手機上的卡牌 */
+
     .card {
-        width: min(350px, 82vw);
+        height: 350px;
+        width: 262px;
     }
+
+
+    .flip-hint {
+        font-size: 14px;
+    }
+
+
+    /* 下方文字 */
+
+    .frame-footer {
+        min-height: 75px;
+
+        padding: 14px 15px;
+    }
+
+
+    .frame-footer p {
+        font-size: 16px;
+    }
+
 }
