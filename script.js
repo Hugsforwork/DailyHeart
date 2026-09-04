@@ -80,9 +80,6 @@ const cardImage =
 const pdfLink =
     document.getElementById("pdf-link");
 
-const flipHint =
-    document.getElementById("flip-hint");
-
 const drawAgain =
     document.getElementById("draw-again");
 
@@ -193,12 +190,6 @@ function drawCard() {
         pool.pdf;
 
 
-    /* 顯示提示 */
-
-    flipHint.style.display =
-        "block";
-}
-
 
 /* =========================
    點卡牌翻面
@@ -212,8 +203,6 @@ card.addEventListener("click", () => {
 
         card.classList.add("flipped");
 
-        flipHint.style.display =
-            "none";
     }
 
 });
