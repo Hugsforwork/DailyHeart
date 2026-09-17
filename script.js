@@ -14,14 +14,14 @@ const cardPools = {
         pdf: "你的PDF連結1",
 
         // 紅色卡背
-        back: "images/back-red.png",
+        back: "back-red.png",
 
         // 紅色 4 張卡
         cards: [
-            "images/card-red-01.png",
-            "images/card-red-02.png",
-            "images/card-red-03.png",
-            "images/card-red-04.png"
+            "card-red-01.png",
+            "card-red-02.png",
+            "card-red-03.png",
+            "card-red-04.png"
         ]
     },
 
@@ -36,14 +36,14 @@ const cardPools = {
         pdf: "你的PDF連結2",
 
         // 黃色卡背
-        back: "images/back-yellow.png",
+        back: "back-yellow.png",
 
         // 黃色 4 張卡
         cards: [
-            "images/card-yellow-05.png",
-            "images/card-yellow-06.png",
-            "images/card-yellow-07.png",
-            "images/card-yellow-08.png"
+            "card-yellow-05.png",
+            "card-yellow-06.png",
+            "card-yellow-07.png",
+            "card-yellow-08.png"
         ]
     },
 
@@ -58,14 +58,14 @@ const cardPools = {
         pdf: "你的PDF連結3",
 
         // 藍色卡背
-        back: "images/back-blue.png",
+        back: "back-blue.png",
 
         // 藍色 4 張卡
         cards: [
-            "images/card-blue-09.png",
-            "images/card-blue-10.png",
-            "images/card-blue-11.png",
-            "images/card-blue-12.png"
+            "card-blue-09.png",
+            "card-blue-10.png",
+            "card-blue-11.png",
+            "card-blue-12.png"
         ]
     },
 
@@ -80,14 +80,14 @@ const cardPools = {
         pdf: "你的PDF連結4",
 
         // 粉色卡背
-        back: "images/back-pink.png",
+        back: "back-pink.png",
 
         // 粉色 4 張卡
         cards: [
-            "images/card-pink-13.png",
-            "images/card-pink-14.png",
-            "images/card-pink-15.png",
-            "images/card-pink-16.png"
+            "card-pink-13.png",
+            "card-pink-14.png",
+            "card-pink-15.png",
+            "card-pink-16.png"
         ]
     }
 
