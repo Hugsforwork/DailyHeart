@@ -1,81 +1,123 @@
-/* =========================
-   DailyHeart
-   卡池資料
-========================= */
+// ==================================================
+// 療癒卡資料
+// ==================================================
 
 const cardPools = {
 
+    // ------------------------------------------
+    // 紅色／躁動
+    // ------------------------------------------
+
     mood01: {
-        pdf: "https://你的PDF連結1",
+
+        // 之後把這裡換成紅色這組卡牌的 PDF 連結
+        pdf: "你的PDF連結1",
+
+        // 紅色卡背
+        back: "images/back-red.png",
+
+        // 紅色 4 張卡
         cards: [
-            "images/card-01.png",
-            "images/card-02.png",
-            "images/card-03.png",
-            "images/card-04.png",
-            "images/card-05.png"
+            "images/card-red-01.png",
+            "images/card-red-02.png",
+            "images/card-red-03.png",
+            "images/card-red-04.png"
         ]
     },
+
+
+    // ------------------------------------------
+    // 黃色／無聊
+    // ------------------------------------------
 
     mood02: {
-        pdf: "https://你的PDF連結2",
+
+        // 之後把這裡換成黃色這組卡牌的 PDF 連結
+        pdf: "你的PDF連結2",
+
+        // 黃色卡背
+        back: "images/back-yellow.png",
+
+        // 黃色 4 張卡
         cards: [
-            "images/card-06.png",
-            "images/card-07.png",
-            "images/card-08.png",
-            "images/card-09.png",
-            "images/card-10.png"
+            "images/card-yellow-05.png",
+            "images/card-yellow-06.png",
+            "images/card-yellow-07.png",
+            "images/card-yellow-08.png"
         ]
     },
+
+
+    // ------------------------------------------
+    // 藍色／疲累
+    // ------------------------------------------
 
     mood03: {
-        pdf: "https://你的PDF連結3",
+
+        // 之後把這裡換成藍色這組卡牌的 PDF 連結
+        pdf: "你的PDF連結3",
+
+        // 藍色卡背
+        back: "images/back-blue.png",
+
+        // 藍色 4 張卡
         cards: [
-            "images/card-11.png",
-            "images/card-12.png",
-            "images/card-13.png",
-            "images/card-14.png",
-            "images/card-15.png"
+            "images/card-blue-09.png",
+            "images/card-blue-10.png",
+            "images/card-blue-11.png",
+            "images/card-blue-12.png"
         ]
     },
 
+
+    // ------------------------------------------
+    // 粉色／難過
+    // ------------------------------------------
+
     mood04: {
-        pdf: "https://你的PDF連結4",
+
+        // 之後把這裡換成粉色這組卡牌的 PDF 連結
+        pdf: "你的PDF連結4",
+
+        // 粉色卡背
+        back: "images/back-pink.png",
+
+        // 粉色 4 張卡
         cards: [
-            "images/card-16.png",
-            "images/card-17.png",
-            "images/card-18.png",
-            "images/card-19.png",
-            "images/card-20.png"
+            "images/card-pink-13.png",
+            "images/card-pink-14.png",
+            "images/card-pink-15.png",
+            "images/card-pink-16.png"
         ]
     }
 
 };
 
 
-/* =========================
-   目前狀態
-========================= */
+// ==================================================
+// 目前遊戲狀態
+// ==================================================
 
 let currentMood = null;
 
+// 紀錄目前這組已經抽過哪些卡
 let usedCards = [];
 
 
-/* =========================
-   找到 HTML 元件
-========================= */
+// ==================================================
+// 取得 HTML 元件
+// ==================================================
 
-const moodScreen =
-    document.getElementById("mood-screen");
+const moodScreen = document.getElementById("mood-screen");
 
-const cardScreen =
-    document.getElementById("card-screen");
+const cardScreen = document.getElementById("card-screen");
 
-const card =
-    document.getElementById("card");
+const card = document.getElementById("card");
 
-const cardImage =
-    document.getElementById("card-image");
+const cardImage = document.getElementById("card-image");
+
+const cardBackImage =
+    document.getElementById("card-back-image");
 
 const pdfLink =
     document.getElementById("pdf-link");
@@ -90,9 +132,9 @@ const cardBack =
     document.querySelector(".card-back");
 
 
-/* =========================
-   選擇心情
-========================= */
+// ==================================================
+// 4 個心情按鈕
+// ==================================================
 
 document
     .querySelectorAll(".mood-button")
@@ -110,32 +152,32 @@ document
     });
 
 
-/* =========================
-   開始這個心情的卡池
-========================= */
+// ==================================================
+// 開始一組新的心情
+// ==================================================
 
 function startMood(mood) {
 
     currentMood = mood;
 
-    /*
-        換一個心情時，
-        重新計算這組卡牌的抽取紀錄
-    */
+    // 換新的心情時，
+    // 重新開始計算這組看過哪些卡
     usedCards = [];
 
+    // 切換畫面
     moodScreen.classList.remove("active");
 
     cardScreen.classList.add("active");
 
+    // 抽第一張卡
     drawCard();
 
 }
 
 
-/* =========================
-   抽一張卡
-========================= */
+// ==================================================
+// 抽卡
+// ==================================================
 
 function drawCard() {
 
@@ -147,99 +189,78 @@ function drawCard() {
     }
 
 
-    /*
-        找出還沒有抽過的卡
-    */
-
+    // 找出還沒有抽過的卡片
     const availableCards =
         pool.cards
             .map((image, index) => ({
-                image,
-                index
+                image: image,
+                index: index
             }))
             .filter(item =>
                 !usedCards.includes(item.index)
             );
 
 
-    /*
-        如果五張都看過
-    */
+    // ------------------------------------------
+    // 4 張全部看過
+    // ------------------------------------------
 
     if (availableCards.length === 0) {
 
         alert(
-            "這組療癒卡都看過啦！\n\n可以換個心情再試試 🌿"
+            "這組療癒卡都看過啦！\n\n可以換個心情，再試試看 🌿"
         );
 
         return;
     }
 
 
-    /*
-        隨機選一張
-    */
+    // ------------------------------------------
+    // 隨機抽一張
+    // ------------------------------------------
 
     const randomIndex =
         Math.floor(
-            Math.random() *
-            availableCards.length
+            Math.random() * availableCards.length
         );
 
     const selected =
         availableCards[randomIndex];
 
 
-    /*
-        記錄這張卡，
-        避免同一輪重複抽到
-    */
-
+    // 記錄這張卡已經看過
     usedCards.push(selected.index);
 
 
-    /*
-        每次抽新卡，
-        先確保卡牌回到正面
-    */
-
+    // 確保顯示新卡時回到正面
     card.classList.remove("flipped");
 
 
-    /*
-        顯示新卡
-    */
-
+    // 放入卡片正面
     cardImage.src =
         selected.image;
 
 
-    /*
-        PDF 連結：
-        對應的是「這個心情的完整卡牌 PDF」
-        而不是單張卡
-    */
+    // 放入目前心情對應的卡背
+    cardBackImage.src =
+        pool.back;
 
+
+    // 放入目前心情對應的完整卡牌 PDF
     pdfLink.href =
         pool.pdf;
 
 }
 
 
-/* =========================
-   點卡牌正面 → 翻到背面
-========================= */
+// ==================================================
+// 點擊卡片正面 → 翻到背面
+// ==================================================
 
 card.addEventListener("click", event => {
 
-    /*
-        如果目前是正面，
-        點卡牌任何位置都可以翻面
-    */
-
-    if (
-        !card.classList.contains("flipped")
-    ) {
+    // 只有目前在正面時才翻面
+    if (!card.classList.contains("flipped")) {
 
         card.classList.add("flipped");
 
@@ -248,23 +269,15 @@ card.addEventListener("click", event => {
 });
 
 
-/* =========================
-   卡牌背面空白區
-   → 翻回正面
-========================= */
+// ==================================================
+// 點擊卡片背面空白處 → 翻回正面
+// ==================================================
 
 cardBack.addEventListener("click", event => {
 
-    /*
-        只有點「背面本身的空白區域」
-        才翻回正面。
-
-        點按鈕或 PDF 連結時不翻牌。
-    */
-
-    if (
-        event.target === cardBack
-    ) {
+    // 如果不是點擊連結或按鈕
+    // 就視為點擊空白區域
+    if (!event.target.closest("a, button")) {
 
         card.classList.remove("flipped");
 
@@ -273,72 +286,53 @@ cardBack.addEventListener("click", event => {
 });
 
 
-/* =========================
-   PDF
-========================= */
+// ==================================================
+// PDF 按鈕
+// ==================================================
 
-pdfLink.addEventListener(
-    "click",
-    event => {
+pdfLink.addEventListener("click", event => {
 
-        /*
-            防止點 PDF 時觸發翻牌
-        */
+    // 防止觸發卡片翻面
+    event.stopPropagation();
 
-        event.stopPropagation();
-
-    }
-);
+});
 
 
-/* =========================
-   再抽一張
-========================= */
+// ==================================================
+// 再抽一張
+// ==================================================
 
-drawAgain.addEventListener(
-    "click",
-    event => {
+drawAgain.addEventListener("click", event => {
 
-        /*
-            不讓按鈕點擊觸發翻牌
-        */
+    // 防止觸發卡片翻面
+    event.stopPropagation();
 
-        event.stopPropagation();
+    // 留在目前心情，再抽一張
+    drawCard();
 
-        /*
-            留在目前心情，
-            從同一個卡池再抽一張
-        */
-
-        drawCard();
-
-    }
-);
+});
 
 
-/* =========================
-   換個心情
-========================= */
+// ==================================================
+// 換個心情
+// ==================================================
 
-changeMood.addEventListener(
-    "click",
-    event => {
+changeMood.addEventListener("click", event => {
 
-        event.stopPropagation();
-
-
-        cardScreen.classList.remove(
-            "active"
-        );
-
-        moodScreen.classList.add(
-            "active"
-        );
+    // 防止觸發卡片翻面
+    event.stopPropagation();
 
 
-        currentMood = null;
+    // 回到心情選擇畫面
+    cardScreen.classList.remove("active");
 
-        usedCards = [];
+    moodScreen.classList.add("active");
 
-    }
-);
+
+    // 清除目前狀態
+    currentMood = null;
+
+    usedCards = [];
+
+});
+
