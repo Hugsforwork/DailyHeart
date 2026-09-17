@@ -82,11 +82,8 @@ body {
 
 .frame-header {
     width: 100%;
-
-    height: 170px;
-
+    height: 120px;
     overflow: hidden;
-
     background: #8BA89D;
 
     display: flex;
@@ -97,11 +94,10 @@ body {
 .top-banner {
     width: 100%;
     height: 100%;
-
     display: block;
-
     object-fit: cover;
 }
+
 
 
 /* =========================
@@ -472,27 +468,30 @@ body {
 /* =========================
    手機版
 ========================= */
-
 @media (max-width: 600px) {
 
+    /* 整體外框 */
     .card-game {
         padding: 10px;
     }
-
 
     .game-frame {
         border-radius: 18px;
     }
 
 
-    /* 上方主視覺 */
+    /* =========================
+       上方設計圖片
+    ========================== */
 
     .frame-header {
-        height: 110px;
+        height: 100px;
     }
 
 
-    /* 中間互動區仍維持固定高度 */
+    /* =========================
+       中間互動區
+    ========================== */
 
     .screen {
         height: 460px;
@@ -502,42 +501,71 @@ body {
     }
 
 
+    /* 心情選擇標題 */
+
     #mood-screen h2 {
-        margin-bottom: 22px;
+        margin: 0 0 22px;
 
         font-size: 18px;
+        line-height: 1.5;
     }
 
+
+    /* 4 個心情按鈕 */
 
     .mood-buttons {
         gap: 12px;
     }
 
 
-    /* 手機上的卡牌 */
+    /* =========================
+       卡片
+    ========================== */
 
     .card {
-        height: 350px;
         width: 262px;
+        height: 350px;
+
+        max-width: 80%;
     }
 
 
-    .flip-hint {
+    /* =========================
+       卡背上的功能按鈕
+    ========================== */
+
+    .card-back-content {
+        padding: 18px;
+    }
+
+
+    .pdf-button,
+    .action-button {
+        max-width: 220px;
+
+        padding: 10px 14px;
+
         font-size: 14px;
     }
 
 
-    /* 下方文字 */
+    /* =========================
+       下方設計圖片
+    ========================== */
 
     .frame-footer {
         min-height: 75px;
 
-        padding: 14px 15px;
+        padding: 0;
     }
 
+    .footer-banner {
+        width: 100%;
+        height: 100%;
 
-    .frame-footer p {
-        font-size: 16px;
+        object-fit: cover;
     }
 
 }
+
+
