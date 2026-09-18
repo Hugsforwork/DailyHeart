@@ -265,20 +265,26 @@ body {
 ========================= */
 
 .card-front,
-.card-back-content {
+.card-back {
     position: absolute;
 
     inset: 0;
 
-    z-index: 2;
+    width: 100%;
+    height: 100%;
 
-    display: flex;
-    flex-direction: column;
+    overflow: hidden;
 
-    justify-content: flex-end;
-    align-items: center;
+    border-radius: 20px;
 
-    padding: 25px;
+    background: #fff;
+
+    border: 2px solid #DDDDD8;
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.08);
+
+    backface-visibility: hidden;
 }
 
 
@@ -309,26 +315,53 @@ body {
 ========================= */
 
 .card-back {
-    padding: 25px;
+    transform: rotateY(180deg);
+
+    padding: 0;
+}
+
+
+/* 卡背設計圖片 */
+
+.card-back > img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    /*
+        使用 contain，
+        讓設計師的卡背完整顯示，
+        不裁切、不變形
+    */
+    object-fit: contain;
+}
+
+
+/* =========================
+   疊在卡背圖片上的功能按鈕
+========================= */
+
+.card-back-content {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
 
     display: flex;
     flex-direction: column;
 
-    justify-content: center;
+    /*
+        目前先放在卡片下方。
+        等設計師最終卡背確定後，
+        再微調這裡的位置。
+    */
+    justify-content: flex-end;
+
     align-items: center;
 
-    text-align: center;
-
-    transform: rotateY(180deg);
-}
-
-
-.card-back p {
-    margin: 0 0 12px;
-
-    font-size: 18px;
-
-    line-height: 1.5;
+    padding: 25px;
 }
 
 
@@ -343,14 +376,11 @@ body {
 
     line-height: 1.5;
 
-    color: #666;
+    color: #58766C;
 
     text-align: center;
-}
 
-
-.flip-hint strong {
-    color: #58766C;
+    font-weight: 600;
 }
 
 
