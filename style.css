@@ -24,7 +24,7 @@ body {
 
     color: #333;
 
-    background: #F7F5F0;
+    background: #F2EEE7;
 }
 
 
@@ -42,7 +42,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    background-color: #F7F5F0;
+    background-color: #F2EEE7;
 
     /*
         之後放設計夥伴製作的底圖
@@ -66,7 +66,7 @@ body {
     display: flex;
     flex-direction: column;
 
-    background: #F7F5F0;
+    background: #F2EEE7;
 
     border: 3px solid #8BA89D;
     border-radius: 24px;
