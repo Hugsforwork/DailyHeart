@@ -127,32 +127,90 @@
                 class="screen"
             >
 
-                <div class="card-area">
+               <div class="card-area">
+
+    <div id="card" class="card">
+
+        <div class="card-inner">
+
+            <!-- =========================
+                 卡片正面
+            ========================== -->
+
+            <div class="card-front">
+
+                <img
+                    id="card-image"
+                    src=""
+                    alt="療癒卡"
+                >
+
+            </div>
 
 
-                    <!-- 卡片本體 -->
+            <!-- =========================
+                 卡片背面
+            ========================== -->
 
-                    <div
-                        id="card"
-                        class="card"
+            <div class="card-back">
+
+                <!-- 設計師製作的卡背圖片 -->
+
+                <img
+                    id="card-back-image"
+                    src=""
+                    alt="療癒卡背面"
+                >
+
+
+                <!-- 疊在卡背圖片上的功能按鈕 -->
+
+                <div class="card-back-content">
+
+                    <a
+                        id="pdf-link"
+                        class="pdf-button"
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
+                        📖 看看這組完整卡牌
+                    </a>
 
-                        <div class="card-inner">
+
+                    <button
+                        id="draw-again"
+                        class="action-button"
+                        type="button"
+                    >
+                        ↻ 再抽一張
+                    </button>
 
 
-                            <!-- =========================
-                                 卡片正面
-                            ========================== -->
+                    <button
+                        id="change-mood"
+                        class="action-button secondary"
+                        type="button"
+                    >
+                        ← 換個心情
+                    </button>
 
-                            <div class="card-front">
+                </div>
 
-                                <img
-                                    id="card-image"
-                                    src=""
-                                    alt="療癒卡"
-                                >
+            </div>
 
-                            </div>
+        </div>
+
+    </div>
+
+
+    <!-- 翻牌提示 -->
+
+    <p class="flip-hint">
+        再點一下卡牌，看看後面藏了什麼！
+    </p>
+
+</div>
 
 
                             <!-- =========================
