@@ -430,34 +430,19 @@ body {
 .frame-footer {
     width: 100%;
 
-    /*
-        比上方主視覺矮，
-        但不會小到像一條細線
-    */
-    min-height: 85px;
-
-    padding: 18px 25px;
-
     display: flex;
     justify-content: center;
     align-items: center;
 
     background: #8BA89D;
 
-    color: #fff;
-
-    text-align: center;
+    overflow: hidden;
 }
 
-
-.frame-footer p {
-    margin: 0;
-
-    font-size: 18px;
-
-    line-height: 1.5;
-
-    font-weight: 600;
+.footer-banner {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 
