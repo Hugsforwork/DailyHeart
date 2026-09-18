@@ -479,28 +479,25 @@ body {
         max-width: 80%;
     }
 
-   .card-back-content {
-    position: absolute;
+    .flip-hint {
+        margin-top: 12px;
 
-    inset: 0;
+        font-size: 14px;
+    }
 
-    z-index: 2;
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: flex-end;
-    align-items: center;
-
-    padding: 25px;
-}
+    .card-back-content {
+        padding: 18px;
+    }
 
     .pdf-button,
     .action-button {
         max-width: 220px;
-        padding: 10px 14px;
+
+        padding: 9px 12px;
+
         font-size: 14px;
+
+        margin-top: 8px;
     }
 
 }
-
