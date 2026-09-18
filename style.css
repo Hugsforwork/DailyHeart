@@ -466,7 +466,6 @@ body {
 ========================= */
 @media (max-width: 600px) {
 
-    /* 整體外框 */
     .card-game {
         padding: 10px;
     }
@@ -475,93 +474,38 @@ body {
         border-radius: 18px;
     }
 
-
-    /* =========================
-       上方設計圖片
-    ========================== */
-
-    .frame-header {
-        height: 100px;
-    }
-
-
-    /* =========================
-       中間互動區
-    ========================== */
-
     .screen {
         height: 460px;
         min-height: 460px;
-
         padding: 20px 15px;
     }
 
-
-    /* 心情選擇標題 */
-
-    #mood-screen h2 {
-        margin: 0 0 22px;
-
-        font-size: 18px;
-        line-height: 1.5;
+    .mood-question {
+        width: 100%;
+        max-width: 500px;
+        margin-bottom: 18px;
     }
-
-
-    /* 4 個心情按鈕 */
 
     .mood-buttons {
         gap: 12px;
     }
 
-
-    /* =========================
-       卡片
-    ========================== */
-
     .card {
         width: 262px;
         height: 350px;
-
         max-width: 80%;
     }
-
-
-    /* =========================
-       卡背上的功能按鈕
-    ========================== */
 
     .card-back-content {
         padding: 18px;
     }
 
-
     .pdf-button,
     .action-button {
         max-width: 220px;
-
         padding: 10px 14px;
-
         font-size: 14px;
     }
 
-
-    /* =========================
-       下方設計圖片
-    ========================== */
-
-    .frame-footer {
-        min-height: 75px;
-
-        padding: 0;
-    }
-
-    .footer-banner {
-        width: 100%;
-        height: 100%;
-
-        object-fit: cover;
-    }
-
 }
-
 
