@@ -460,7 +460,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    background: #8BA89D;
+    background: transparent;
 
     overflow: hidden;
 }
