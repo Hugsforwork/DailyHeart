@@ -275,14 +275,13 @@ body {
 
     overflow: hidden;
 
-    border-radius: 20px;
+    border-radius: 18px;
 
-    background: #fff;
+    background: transparent;
 
-    border: 2px solid #DDDDD8;
+    border: none;
 
-    box-shadow:
-        0 6px 18px rgba(0, 0, 0, 0.08);
+    box-shadow: none;
 
     backface-visibility: hidden;
 }
