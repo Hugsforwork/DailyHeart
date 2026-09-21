@@ -334,6 +334,9 @@ body {
         不裁切、不變形
     */
     object-fit: contain;
+   
+    pointer-events: none;
+
 }
 
 
