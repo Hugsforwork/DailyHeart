@@ -297,7 +297,7 @@ cardBack.addEventListener("click", event => {
 
     card.classList.remove("flipped");
 
-    flipHint.textContent = "再點一下卡牌，看看後面藏了什麼！";
+    flipHint.textContent = "再點一下卡牌，翻面看看！";
 
 });
 
@@ -349,6 +349,10 @@ changeMood.addEventListener("click", event => {
     currentMood = null;
 
     usedCards = [];
+
+    flipHint.textContent =
+        "再點一下卡牌，翻面看看！";
+
 
 });
 
