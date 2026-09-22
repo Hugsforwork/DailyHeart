@@ -354,16 +354,21 @@ body {
     display: flex;
     flex-direction: column;
 
-    /*
-        目前先放在卡片下方。
-        等設計師最終卡背確定後，
-        再微調這裡的位置。
-    */
     justify-content: flex-end;
 
     align-items: center;
 
     padding: 25px;
+
+    /* 讓卡背空白區可以被點擊翻回正面 */
+    pointer-events: none;
+}
+
+
+/* 按鈕與 PDF 連結仍然可以正常點擊 */
+.card-back-content a,
+.card-back-content button {
+    pointer-events: auto;
 }
 
 
