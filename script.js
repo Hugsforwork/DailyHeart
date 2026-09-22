@@ -286,13 +286,13 @@ card.addEventListener("click", event => {
 
 cardBack.addEventListener("click", event => {
 
-    // 如果點到 PDF 或按鈕，就不要翻回正面
     if (event.target.closest("a, button")) {
         return;
     }
 
-    // 其他任何地方都可以翻回原本的卡片正面
     card.classList.remove("flipped");
+
+    flipHint.textContent = "再點一下卡牌，看看後面藏了什麼！";
 
 });
 
