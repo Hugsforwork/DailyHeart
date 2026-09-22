@@ -21,7 +21,17 @@ const cardPools = {
             "images/card-red-01.png",
             "images/card-red-02.png",
             "images/card-red-03.png",
-            "images/card-red-04.png"
+            "images/card-red-04.png"card.addEventListener("click", event => {
+
+    if (!card.classList.contains("flipped")) {
+
+        card.classList.add("flipped");
+
+        flipHint.textContent = "點空白處，翻回來看看！";
+
+    }
+
+});
         ]
     },
 
@@ -259,10 +269,11 @@ function drawCard() {
 
 card.addEventListener("click", event => {
 
-    // 只有目前在正面時才翻面
     if (!card.classList.contains("flipped")) {
 
         card.classList.add("flipped");
+
+        flipHint.textContent = "點空白處，翻回來看看！";
 
     }
 
