@@ -279,43 +279,29 @@ function drawCard() {
 // ==================================================
 // 點擊卡片正面 → 翻到背面
 // ==================================================
-
-card.addEventListener("click", event => {
-
-    // 只有目前在正面時才翻到背面
-    if (!card.classList.contains("flipped")) {
-
-        card.classList.add("flipped");
-
-        // 提示文字跟著翻面
-        flipHint.textContent =
-            "點空白處，翻回來看看！";
-
-    }
-
-});
-
-
 // ==================================================
 // 點擊卡片背面空白處 → 翻回目前這張卡
 // ==================================================
 
-cardBack.addEventListener("click", event => {
 
-    // 如果點到 PDF 或按鈕
-    // 就不要翻回正面
+card.addEventListener("click", event => {
     if (event.target.closest("a, button")) {
         return;
     }
 
-    // 其他空白位置
-    // 都可以翻回目前這張卡的正面
+    if (!card.classList.contains("flipped")) {
+        card.classList.add("flipped");
+
+        flipHint.textContent =
+            "點空白處，翻回來看看！";
+
+        return;
+    }
+
     card.classList.remove("flipped");
 
-    // 提示文字回到正面狀態
     flipHint.textContent =
         "再點一下卡牌，翻面看看！";
-
 });
 
 
