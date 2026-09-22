@@ -355,12 +355,11 @@ body {
     flex-direction: column;
 
     justify-content: flex-end;
-
     align-items: center;
 
     padding: 25px;
 
-    /* 讓卡背空白區可以被點擊翻回正面 */
+    /* 讓卡背空白處的點擊穿透到 .card-back */
     pointer-events: none;
 }
 
