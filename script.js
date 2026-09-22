@@ -21,17 +21,7 @@ const cardPools = {
             "images/card-red-01.png",
             "images/card-red-02.png",
             "images/card-red-03.png",
-            "images/card-red-04.png"card.addEventListener("click", event => {
-
-    if (!card.classList.contains("flipped")) {
-
-        card.classList.add("flipped");
-
-        flipHint.textContent = "點空白處，翻回來看看！";
-
-    }
-
-});
+            "images/card-red-04.png"
         ]
     },
 
@@ -118,13 +108,17 @@ let usedCards = [];
 // 取得 HTML 元件
 // ==================================================
 
-const moodScreen = document.getElementById("mood-screen");
+const moodScreen =
+    document.getElementById("mood-screen");
 
-const cardScreen = document.getElementById("card-screen");
+const cardScreen =
+    document.getElementById("card-screen");
 
-const card = document.getElementById("card");
+const card =
+    document.getElementById("card");
 
-const cardImage = document.getElementById("card-image");
+const cardImage =
+    document.getElementById("card-image");
 
 const cardBackImage =
     document.getElementById("card-back-image");
@@ -140,6 +134,10 @@ const changeMood =
 
 const cardBack =
     document.querySelector(".card-back");
+
+// 卡片下方的操作提示文字
+const flipHint =
+    document.querySelector(".flip-hint");
 
 
 // ==================================================
@@ -199,7 +197,10 @@ function drawCard() {
     }
 
 
+    // ------------------------------------------
     // 找出還沒有抽過的卡片
+    // ------------------------------------------
+
     const availableCards =
         pool.cards
             .map((image, index) => ({
@@ -218,7 +219,7 @@ function drawCard() {
     if (availableCards.length === 0) {
 
         alert(
-            "這組療癒卡都看過啦！\n\n可以換個心情，再試試看 🌿"
+            "這組療癒卡都看過啦！\n\n可以換個心情，再試試 🌿"
         );
 
         return;
@@ -242,7 +243,11 @@ function drawCard() {
     usedCards.push(selected.index);
 
 
-    // 確保顯示新卡時回到正面
+    // ------------------------------------------
+    // 顯示新卡
+    // ------------------------------------------
+
+    // 確保新卡從正面開始
     card.classList.remove("flipped");
 
 
@@ -260,8 +265,11 @@ function drawCard() {
     pdfLink.href =
         pool.pdf;
 
-    
-    // 新卡還沒翻面，所以提示文字回到正面狀態
+
+    // ------------------------------------------
+    // 新卡的提示文字
+    // ------------------------------------------
+
     flipHint.textContent =
         "再點一下卡牌，看看後面藏了什麼！";
 
@@ -274,11 +282,14 @@ function drawCard() {
 
 card.addEventListener("click", event => {
 
+    // 只有目前在正面時才翻到背面
     if (!card.classList.contains("flipped")) {
 
         card.classList.add("flipped");
 
-        flipHint.textContent = "點空白處，翻回來看看！";
+        // 提示文字跟著翻面
+        flipHint.textContent =
+            "點空白處，翻回來看看！";
 
     }
 
@@ -286,18 +297,24 @@ card.addEventListener("click", event => {
 
 
 // ==================================================
-// 點擊卡片背面空白處 → 翻回正面
+// 點擊卡片背面空白處 → 翻回目前這張卡
 // ==================================================
 
 cardBack.addEventListener("click", event => {
 
+    // 如果點到 PDF 或按鈕
+    // 就不要翻回正面
     if (event.target.closest("a, button")) {
         return;
     }
 
+    // 其他空白位置
+    // 都可以翻回目前這張卡的正面
     card.classList.remove("flipped");
 
-    flipHint.textContent = "再點一下卡牌，翻面看看！";
+    // 提示文字回到正面狀態
+    flipHint.textContent =
+        "再點一下卡牌，看看後面藏了什麼！";
 
 });
 
@@ -308,7 +325,7 @@ cardBack.addEventListener("click", event => {
 
 pdfLink.addEventListener("click", event => {
 
-    // 防止觸發卡片翻面
+    // 防止點擊 PDF 時觸發卡片翻面
     event.stopPropagation();
 
 });
@@ -320,10 +337,11 @@ pdfLink.addEventListener("click", event => {
 
 drawAgain.addEventListener("click", event => {
 
-    // 防止觸發卡片翻面
+    // 防止點擊按鈕時觸發卡片翻面
     event.stopPropagation();
 
-    // 留在目前心情，再抽一張
+    // 留在目前心情
+    // 抽一張新的卡
     drawCard();
 
 });
@@ -335,7 +353,7 @@ drawAgain.addEventListener("click", event => {
 
 changeMood.addEventListener("click", event => {
 
-    // 防止觸發卡片翻面
+    // 防止點擊按鈕時觸發卡片翻面
     event.stopPropagation();
 
 
@@ -350,9 +368,9 @@ changeMood.addEventListener("click", event => {
 
     usedCards = [];
 
-    flipHint.textContent =
-        "再點一下卡牌，翻面看看！";
 
+    // 提示文字恢復預設
+    flipHint.textContent =
+        "再點一下卡牌，看看後面藏了什麼！";
 
 });
-
