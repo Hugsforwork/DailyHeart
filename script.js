@@ -271,7 +271,7 @@ function drawCard() {
     // ------------------------------------------
 
     flipHint.textContent =
-        "再點一下卡牌，看看後面藏了什麼！";
+        "再點一下卡牌，翻面看看！";
 
 }
 
@@ -314,7 +314,7 @@ cardBack.addEventListener("click", event => {
 
     // 提示文字回到正面狀態
     flipHint.textContent =
-        "再點一下卡牌，看看後面藏了什麼！";
+        "再點一下卡牌，翻面看看！";
 
 });
 
@@ -371,6 +371,6 @@ changeMood.addEventListener("click", event => {
 
     // 提示文字恢復預設
     flipHint.textContent =
-        "再點一下卡牌，看看後面藏了什麼！";
+        "再點一下卡牌，翻面看看！";
 
 });
