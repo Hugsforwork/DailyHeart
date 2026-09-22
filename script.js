@@ -260,6 +260,11 @@ function drawCard() {
     pdfLink.href =
         pool.pdf;
 
+    
+    // 新卡還沒翻面，所以提示文字回到正面狀態
+    flipHint.textContent =
+        "再點一下卡牌，看看後面藏了什麼！";
+
 }
 
 
