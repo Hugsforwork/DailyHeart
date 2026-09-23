@@ -167,6 +167,8 @@ body {
 
     cursor: pointer;
 
+    border-radius: 999px;
+
     transition:
         transform 0.2s ease,
         filter 0.2s ease;
@@ -187,9 +189,9 @@ body {
 .mood-button:hover {
     transform: translateY(-3px);
 
-    filter:
         drop-shadow(
-            0 6px 8px rgba(0, 0, 0, 0.12)
+           0 0 0 4px rgba(139, 168, 157, 0.18), 
+           0 6px 10px rgba(0, 0, 0, 0.12)
         );
 }
 
