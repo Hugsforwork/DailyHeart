@@ -293,7 +293,7 @@ card.addEventListener("click", event => {
         card.classList.add("flipped");
 
         flipHint.textContent =
-            "點空白處，翻回來看看！";
+            "點卡牌空白處，翻回來看看！";
 
         return;
     }
