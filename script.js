@@ -11,7 +11,7 @@ const cardPools = {
     mood01: {
 
         // 之後把這裡換成紅色這組卡牌的 PDF 連結
-        pdf: "你的PDF連結1",
+        pdf: "https://pse.is/9p4lg7",
 
         // 紅色卡背
         back: "images/back-red.png",
@@ -33,7 +33,7 @@ const cardPools = {
     mood02: {
 
         // 之後把這裡換成黃色這組卡牌的 PDF 連結
-        pdf: "你的PDF連結2",
+        pdf: "https://pse.is/9p4lg7",
 
         // 黃色卡背
         back: "images/back-yellow.png",
@@ -55,7 +55,7 @@ const cardPools = {
     mood03: {
 
         // 之後把這裡換成藍色這組卡牌的 PDF 連結
-        pdf: "你的PDF連結3",
+        pdf: "https://pse.is/9p4lg7",
 
         // 藍色卡背
         back: "images/back-blue.png",
@@ -77,7 +77,7 @@ const cardPools = {
     mood04: {
 
         // 之後把這裡換成粉色這組卡牌的 PDF 連結
-        pdf: "你的PDF連結4",
+        pdf: "https://pse.is/9p4lg7",
 
         // 粉色卡背
         back: "images/back-pink.png",
