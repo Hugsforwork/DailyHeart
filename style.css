@@ -534,4 +534,30 @@ body {
         margin-top: 8px;
     }
 
+/* =========================
+   嵌入模式（embed mode）
+   給電子書等有限框框使用
+========================= */
+html.embed-mode .card-game {
+    padding: 10px;
+}
+
+html.embed-mode .screen {
+    height: 320px;
+    min-height: 320px;
+    padding: 15px 20px;
+}
+
+html.embed-mode .mood-question {
+    margin-bottom: 10px;
+}
+
+html.embed-mode .mood-buttons {
+    gap: 10px;
+}
+
+html.embed-mode .card {
+    width: 220px;
+    height: 293px;
+}
 }
