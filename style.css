@@ -543,8 +543,8 @@ html.embed-mode .card-game {
 }
 
 html.embed-mode .screen {
-    height: 300px;
-    min-height: 300px;
+    height: 320px;
+    min-height: 320px;
     padding: 15px 20px;
 }
 
@@ -559,4 +559,5 @@ html.embed-mode .mood-buttons {
 html.embed-mode .card {
     width: 220px;
     height: 293px;
+}
 }
